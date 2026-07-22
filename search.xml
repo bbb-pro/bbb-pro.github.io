@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>🎉 Lite MD Editor v1.0.0 正式发布</title>
+      <link href="/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/"/>
+      <url>/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Lite-MD-Editor-v1-0-0"><a href="#Lite-MD-Editor-v1-0-0" class="headerlink" title="Lite MD Editor v1.0.0"></a>Lite MD Editor v1.0.0</h1><h2 id="🎉-首个正式版本"><a href="#🎉-首个正式版本" class="headerlink" title="🎉 首个正式版本"></a>🎉 首个正式版本</h2><p>轻量化的 Markdown 编辑器，像 Word 一样编辑和阅读 .md 文件，纯本地运行，无需登录和联网。</p><h2 id="✨-功能特性"><a href="#✨-功能特性" class="headerlink" title="✨ 功能特性"></a>✨ 功能特性</h2><ul><li><strong>📝 Markdown 编辑</strong>：完整语法支持，代码块高亮</li><li><strong>👁️ 实时预览</strong>：支持 GitHub Flavored Markdown（表格、任务列表、删除线等）</li><li><strong>🔀 三种模式</strong>：编辑 &#x2F; 分屏（默认）&#x2F; 预览，一键切换</li><li><strong>🗂️ 文件操作</strong>：新建、打开、保存、另存为</li><li><strong>📄 PDF 导出</strong>：一键导出为 PDF（Ctrl+E）</li><li><strong>🎨 Word 风格工具栏</strong>：标题、加粗、斜体、列表、链接、代码块、表格等快捷按钮</li><li><strong>⌨️ 键盘快捷键</strong>：Ctrl+S&#x2F;N&#x2F;O&#x2F;Shift+S&#x2F;B&#x2F;I&#x2F;E</li><li><strong>📊 状态栏</strong>：文件名、保存状态、字数统计（中英文混合）</li><li><strong>🚫 纯本地</strong>：无后端、无登录、无网络请求</li></ul><h2 id="📦-下载"><a href="#📦-下载" class="headerlink" title="📦 下载"></a>📦 下载</h2><table><thead><tr><th>文件</th><th>说明</th><th>适用</th></tr></thead><tbody><tr><td><code>Lite-MD-Editor-Setup-1.0.0.exe</code></td><td>NSIS 安装包（约 78MB）</td><td>推荐普通用户，双击安装</td></tr><tr><td><code>Lite-MD-Editor-Portable-1.0.0.zip</code></td><td>便携版压缩包</td><td>免安装，解压即用</td></tr></tbody></table><h2 id="🖥️-系统要求"><a href="#🖥️-系统要求" class="headerlink" title="🖥️ 系统要求"></a>🖥️ 系统要求</h2><ul><li>Windows 10&#x2F;11 (64-bit)</li><li>无需安装其他运行时环境</li></ul><h2 id="🚀-快速开始"><a href="#🚀-快速开始" class="headerlink" title="🚀 快速开始"></a>🚀 快速开始</h2><h3 id="安装版"><a href="#安装版" class="headerlink" title="安装版"></a>安装版</h3><ol><li>下载 <code>Lite-MD-Editor-Setup-1.0.0.exe</code></li><li>双击运行，按提示安装</li><li>从开始菜单或桌面快捷方式启动</li></ol><h3 id="便携版"><a href="#便携版" class="headerlink" title="便携版"></a>便携版</h3><ol><li>下载 <code>Lite-MD-Editor-Portable-1.0.0.zip</code></li><li>解压到任意目录</li><li>双击 <code>Lite MD Editor.exe</code> 启动</li></ol><h2 id="💻-从源码构建"><a href="#💻-从源码构建" class="headerlink" title="💻 从源码构建"></a>💻 从源码构建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bbb-pro/lite_MD_editor.git</span><br><span class="line"><span class="built_in">cd</span> lite_MD_editor</span><br><span class="line">npm install</span><br><span class="line">npm run electron:build    <span class="comment"># 打包 EXE</span></span><br><span class="line">npm run electron:dev      <span class="comment"># 开发模式</span></span><br><span class="line">npm run dev               <span class="comment"># Web 开发模式</span></span><br></pre></td></tr></table></figure><h2 id="🌐-在线使用"><a href="#🌐-在线使用" class="headerlink" title="🌐 在线使用"></a>🌐 在线使用</h2><p>访问：<a href="https://bbb-pro.github.io/lite_MD_editor/">https://bbb-pro.github.io/lite_MD_editor/</a></p><h2 id="📄-License"><a href="#📄-License" class="headerlink" title="📄 License"></a>📄 License</h2><p>MIT</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Electron </tag>
+            
+            <tag> Markdown </tag>
+            
+            <tag> 开源 </tag>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用WorkBuddy管理Hexo个人博客教程</title>
       <link href="/2026/07/17/%E7%94%A8WorkBuddy%E7%AE%A1%E7%90%86Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
       <url>/2026/07/17/%E7%94%A8WorkBuddy%E7%AE%A1%E7%90%86Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</url>
