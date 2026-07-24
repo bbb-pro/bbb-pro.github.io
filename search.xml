@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>DieCut Designer — 刀模设计器介绍</title>
+      <link href="/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/"/>
+      <url>/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>DieCut Designer 是一个纯前端（无框架）的刀模设计工具，内置 <strong>1278 种</strong>标准纸盒盒型。用户可以通过改变长 &#x2F; 宽 &#x2F; 高等参数，实时生成对应的刀线（裁切）与压线（折痕）展开图，并一键导出为 SVG &#x2F; DXF &#x2F; PDF 三种格式，直接对接打样、模切与 CAD 流程。</p><p>核心数据流：<strong>参数变化 → 防抖 → 调用 Packmage API 计算几何 → 前端渲染 SVG 刀模图 → 导出。</strong></p><p>线上地址：<a href="http://057300.xyz/diecut/">http://057300.xyz/diecut/</a></p><hr><h2 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h2><ul><li><strong>完整盒型库（1278 种）</strong>：覆盖 FEFCO &#x2F; 卡纸盒 &#x2F; 礼盒 &#x2F; 异形盒等，支持关键词与盒型 ID 搜索，按分类浏览。</li><li><strong>参数化实时调整</strong>：修改长（L）、宽（W）、高（D）等参数后，刀模图在 1~2 秒内自动重算并刷新，自动适配视图。</li><li><strong>专业刀模渲染</strong>：<ul><li>刀线（裁切）红色实线，压线（折痕）蓝色虚线，符合印前规范。</li><li>坐标单位为毫米（mm），可直接用于生产。</li><li>支持尺寸标注（Dimensions）、网格（Grid）、部件标签（Labels）独立开关。</li></ul></li><li><strong>画布交互</strong>：滚轮缩放、拖拽平移、双击适配视图，以及 1:1 &#x2F; FIT 快捷按钮，缩放比例实时显示。</li><li><strong>多种导出格式</strong>：<ul><li><strong>SVG</strong>：矢量，分层（cut-lines &#x2F; crease-lines），适合网页与矢量编辑。</li><li><strong>DXF</strong>：R12 格式，CUT &#x2F; CREASE 分层，直接导入 AutoCAD 等 CAD 软件。</li><li><strong>PDF</strong>：矢量 PDF，1mm &#x3D; 2.8346pt，可直接打印或交付。</li></ul></li><li><strong>纸张厚度补偿（Compensation）</strong>：可选 0.3 ~ 3.0mm 厚度，自动修正压线位置（考虑纸板反弹量）。</li><li><strong>3D 折盒预览</strong>：基于 Three.js（WebGL）渲染折叠后的 3D 纸盒，支持鼠标旋转 &#x2F; 缩放；Three.js 不可用时回退到轻量方案。</li><li><strong>派生参数显示</strong>：实时计算并展示表面积、体积等相关数据。</li></ul><hr><h2 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h2><table><thead><tr><th>模块</th><th>文件</th><th>职责</th></tr></thead><tbody><tr><td>主应用逻辑</td><td><code>app.js</code></td><td>状态管理、UI 事件、参数面板、盒型选择、渲染调度</td></tr><tr><td>盒型数据</td><td><code>packmage_data.js</code></td><td>1278 种盒型的完整数据（约 6.7MB）</td></tr><tr><td>盒型逻辑</td><td><code>packmage_boxtypes.js</code></td><td>参数构建（buildInPms）、API 调用、几何数据转换（fe → cuts&#x2F;creases）</td></tr><tr><td>渲染引擎</td><td><code>renderer.js</code></td><td>SVG 绘制（刀线 &#x2F; 压线 &#x2F; 标注 &#x2F; 网格）、缩放平移（pan&#x2F;zoom）</td></tr><tr><td>3D 预览</td><td><code>preview3d.js</code></td><td>Three.js WebGL 折盒渲染与交互</td></tr><tr><td>导出</td><td><code>exporter.js</code></td><td>SVG &#x2F; DXF &#x2F; PDF 生成与下载</td></tr><tr><td>环境配置</td><td><code>config.js</code></td><td>API 地址切换（本地 <code>/api/box</code> vs 线上同源代理）</td></tr><tr><td>本地代理</td><td><code>server.js</code></td><td>本地 Node 服务器 + Packmage API 代理</td></tr><tr><td>线上代理</td><td><code>worker.js</code></td><td>Cloudflare Worker —— 线上 API 代理（经 Worker Route 同源部署）</td></tr><tr><td>样式</td><td><code>style.css</code></td><td>响应式布局、深色 &#x2F; 浅色主题</td></tr></tbody></table><p><strong>技术栈</strong>：原生 HTML + CSS + JavaScript（无前端框架），SVG 渲染，Three.js（3D），Cloudflare Workers（线上 API 代理），GitHub Pages（静态托管）。</p><p><strong>为什么需要 API 代理</strong>：Packmage API 不支持浏览器跨域（CORS），因此前端不能直接调用，必须通过同源代理转发请求。本地用 <code>server.js</code>，线上用 Cloudflare Worker。</p><hr><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">diecut/</span><br><span class="line">├── index.html              # 主页面</span><br><span class="line">├── style.css               # 样式</span><br><span class="line">├── app.js                  # 主逻辑</span><br><span class="line">├── packme_data.js          # 盒型数据库（1278 种）</span><br><span class="line">├── packme_boxtypes.js      # 盒型参数与 API 逻辑</span><br><span class="line">├── renderer.js             # SVG 渲染引擎</span><br><span class="line">├── preview3d.js            # 3D 预览</span><br><span class="line">├── exporter.js             # 导出（SVG/DXF/PDF）</span><br><span class="line">├── config.js               # 环境配置（API 地址）</span><br><span class="line">├── server.js               # 本地开发服务器 + API 代理</span><br><span class="line">├── worker.js               # Cloudflare Worker（线上 API 代理）</span><br><span class="line">└── wrangler.toml           # Worker 部署配置</span><br></pre></td></tr></table></figure><hr><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="本���运行"><a href="#本���运行" class="headerlink" title="本���运行"></a>本���运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要 Node.js</span></span><br><span class="line">node server.js</span><br><span class="line"><span class="comment"># 打开浏览器访问 http://localhost:8093</span></span><br></pre></td></tr></table></figure><p>本地模式由 <code>server.js</code> 同时托管静态文件并代理 <code>/api/box</code> 请求，无需额外配置。</p><h3 id="线上访问"><a href="#线上访问" class="headerlink" title="线上访问"></a>线上访问</h3><p>直接打开 <a href="http://057300.xyz/diecut/">http://057300.xyz/diecut/</a> 即可使用（API 经 Cloudflare Worker Route 同源代理，已配置完成）。</p><hr><h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><ol><li><strong>选择盒型</strong>：在左侧 Box Library 搜索或浏览分类，点击任一盒型载入。</li><li><strong>调整参数</strong>：切到 Parameters 标签，拖动 L &#x2F; W &#x2F; D 等滑块，刀模图会实时更新。<ul><li>修改参数后需等待约 1~2 秒（含防抖与 API 计算延迟）。</li><li>点 Reset 可恢复默认参数。</li></ul></li><li><strong>视图操作</strong>：在画布上滚轮缩放、拖拽平移、双击适配；或用右侧 Zoom 控件（+&#x2F;−&#x2F;FIT&#x2F;1:1）。</li><li><strong>显示开关</strong>：Dimensions（尺寸标注）、Grid（网格）、Labels（部件标签）可分别开关。</li><li><strong>厚度补偿</strong>：顶部 Compensation 勾选后选择纸板厚度，压线位置会自动修正。</li><li><strong>导出</strong>：点击顶部 SVG &#x2F; DXF &#x2F; PDF 按钮，浏览器自动下载对应文件。</li></ol><hr><h2 id="导出格式说明"><a href="#导出格式说明" class="headerlink" title="导出格式说明"></a>导出格式说明</h2><table><thead><tr><th>格式</th><th>用途</th><th>图层 &#x2F; 样式</th></tr></thead><tbody><tr><td>SVG</td><td>矢量编辑、网页</td><td>cut-lines（红实线）&#x2F; crease-lines（蓝虚线），单位 mm</td></tr><tr><td>DXF</td><td>CAD（AutoCAD 等）</td><td>CUT 层（实线）&#x2F; CREASE 层（虚线），R12 格式</td></tr><tr><td>PDF</td><td>打印、交付</td><td>矢量，1mm &#x3D; 2.8346pt，红刀线 &#x2F; 蓝压线</td></tr></tbody></table><p>所有导出均为矢量，坐标单位为毫米，刀线与压线分色分图层，便于后续模切与印刷流程。</p><hr><h2 id="部署说明"><a href="#部署说明" class="headerlink" title="部署说明"></a>部署说明</h2><p>项目为纯静态站点，由 GitHub Actions（<code>.github/workflows/deploy.yml</code>）自动部署到 GitHub Pages，并绑定自定义域名 <code>057300.xyz</code>。</p><hr><h2 id="已知约束"><a href="#已知约束" class="headerlink" title="已知约束"></a>已知约束</h2><ul><li>参数需在 Packmage 允许的合理范围内，超出范围时 API 会返回默认几何数据并提示。</li><li>首次访问需加载约 6.7MB 的盒型数据文件，建议保持网络畅通；浏览器会缓存该文件。</li><li>3D 预览依赖 Three.js CDN，弱网环境下可能回退到基础预览。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开源 </tag>
+            
+            <tag> 工具 </tag>
+            
+            <tag> DieCut </tag>
+            
+            <tag> 刀模 </tag>
+            
+            <tag> 纸盒 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>🎉 Lite MD Editor v1.0.0 正式发布</title>
       <link href="/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/"/>
       <url>/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/</url>
