@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>🎉 Lite MD Editor v1.0.0 正式发布 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="轻量化的 Markdown 编辑器，像 Word 一样编辑和阅读 .md 文件，纯本地运行，无需登录和联网。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>🎉 Lite MD Editor v1.0.0 正式发布 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="轻量化的 Markdown 编辑器，像 Word 一样编辑和阅读 .md 文件，纯本地运行，无需登录和联网。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🎉 Lite MD Editor v1.0.0 正式发布">
 <meta property="og:url" content="https://bbb-pro.github.io/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/index.html">
@@ -102,10 +102,7 @@
 
       const theme = saveToLocal.get('theme')
     
-          const hour = new Date().getHours()
-          const isNight = hour <= 6 || hour >= 18
-          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else theme === 'light' ? activateLightMode() : activateDarkMode()
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
       
       const asideStatus = saveToLocal.get('aside-status')

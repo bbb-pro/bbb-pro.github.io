@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>免费的在线刀版工具发布简介 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在线浏览、参数化调整、实时预览并导出工业级刀模图，内置1278种标准盒型。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>免费的在线刀版工具发布简介 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="在线浏览、参数化调整、实时预览并导出工业级刀模图，内置1278种标准盒型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="免费的在线刀版工具发布简介">
 <meta property="og:url" content="https://bbb-pro.github.io/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/index.html">
@@ -103,10 +103,7 @@
 
       const theme = saveToLocal.get('theme')
     
-          const hour = new Date().getHours()
-          const isNight = hour <= 6 || hour >= 18
-          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else theme === 'light' ? activateLightMode() : activateDarkMode()
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
       
       const asideStatus = saveToLocal.get('aside-status')

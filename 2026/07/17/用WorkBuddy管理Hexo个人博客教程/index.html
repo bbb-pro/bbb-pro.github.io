@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>用WorkBuddy管理Hexo个人博客教程 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="适合人群：已经用 Hexo + Butterfly 主题搭建了博客、部署在 GitHub Pages 上的开发者工具版本：WorkBuddy（CodeBuddy Desktop）+ Hexo 6.x + Butterfly 4.x预计阅读：8 分钟   为什么用 WorkBuddy 管理博客？写博客最痛苦的不是写文章，而是——  打开终端 → cd 到博客目录 → hexo new → 打开编辑">
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>用WorkBuddy管理Hexo个人博客教程 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="适合人群：已经用 Hexo + Butterfly 主题搭建了博客、部署在 GitHub Pages 上的开发者工具版本：WorkBuddy（CodeBuddy Desktop）+ Hexo 6.x + Butterfly 4.x预计阅读：8 分钟   为什么用 WorkBuddy 管理博客？写博客最痛苦的不是写文章，而是——  打开终端 → cd 到博客目录 → hexo new → 打开编辑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用WorkBuddy管理Hexo个人博客教程">
 <meta property="og:url" content="https://bbb-pro.github.io/2026/07/17/%E7%94%A8WorkBuddy%E7%AE%A1%E7%90%86Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/index.html">
@@ -103,10 +103,7 @@
 
       const theme = saveToLocal.get('theme')
     
-          const hour = new Date().getHours()
-          const isNight = hour <= 6 || hour >= 18
-          if (theme === undefined) isNight ? activateDarkMode() : activateLightMode()
-          else theme === 'light' ? activateLightMode() : activateDarkMode()
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
       
       const asideStatus = saveToLocal.get('aside-status')
