@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="24" y="40" fill="#0f172a" font-size="20" font-weight="700">③ 一键计算，查看 3D 装柜方案</text>
+  <text x="24" y="64" fill="#64748b" font-size="14">点击「计算装柜」后左侧生成立体效果，可拖拽旋转 / 缩放 / 平移查看</text>
+
+  <!-- 3D 集装箱 -->
+  <g transform="translate(360,300)">
+    <!-- 柜体线框 -->
+    <polygon points="0,-180 240,-60 -20,60 -260,-60" fill="#0b1220" stroke="#334155" stroke-width="2"/>
+    <polygon points="-260,-60 -20,60 -20,260 -260,140" fill="#0a0f1c" stroke="#334155" stroke-width="2"/>
+    <polygon points="240,-60 -20,60 -20,260 240,140" fill="#070b16" stroke="#334155" stroke-width="2"/>
+
+    <!-- 砖砌托盘层（由内向外） -->
+    <g>
+      <!-- 第一层 -->
+      <g fill="#38bdf8" opacity="0.9">
+        <rect x="-200" y="-30" width="42" height="34" rx="3"/>
+        <rect x="-154" y="-30" width="42" height="34" rx="3"/>
+        <rect x="-108" y="-30" width="42" height="34" rx="3"/>
+        <rect x="-62" y="-30" width="42" height="34" rx="3"/>
+        <rect x="-16" y="-30" width="42" height="34" rx="3"/>
+        <rect x="30" y="-30" width="42" height="34" rx="3"/>
+        <rect x="76" y="-30" width="42" height="34" rx="3"/>
+        <rect x="122" y="-30" width="42" height="34" rx="3"/>
+      </g>
+      <!-- 第二层（交错） -->
+      <g fill="#818cf8" opacity="0.9">
+        <rect x="-178" y="14" width="42" height="34" rx="3"/>
+        <rect x="-132" y="14" width="42" height="34" rx="3"/>
+        <rect x="-86" y="14" width="42" height="34" rx="3"/>
+        <rect x="-40" y="14" width="42" height="34" rx="3"/>
+        <rect x="6" y="14" width="42" height="34" rx="3"/>
+        <rect x="52" y="14" width="42" height="34" rx="3"/>
+        <rect x="98" y="14" width="42" height="34" rx="3"/>
+        <rect x="144" y="14" width="42" height="34" rx="3"/>
+      </g>
+      <!-- 第三层 -->
+      <g fill="#34d399" opacity="0.9">
+        <rect x="-200" y="58" width="42" height="34" rx="3"/>
+        <rect x="-154" y="58" width="42" height="34" rx="3"/>
+        <rect x="-108" y="58" width="42" height="34" rx="3"/>
+        <rect x="-62" y="58" width="42" height="34" rx="3"/>
+        <rect x="-16" y="58" width="42" height="34" rx="3"/>
+        <rect x="30" y="58" width="42" height="34" rx="3"/>
+        <rect x="76" y="58" width="42" height="34" rx="3"/>
+        <rect x="122" y="58" width="42" height="34" rx="3"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 交互提示浮层 -->
+  <rect x="360" y="470" width="280" height="48" rx="10" fill="#0f172a"/>
+  <text x="380" y="492" fill="#e2e8f0" font-size="13">🔄 旋转 90°</text>
+  <text x="500" y="492" fill="#e2e8f0" font-size="13">🗑 删除</text>
+  <text x="380" y="510" fill="#94a3b8" font-size="11">选中箱子后浮层固定在预览底部</text>
+
+  <!-- 左侧操作说明 -->
+  <rect x="24" y="100" width="300" height="380" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="44" y="130" fill="#0f172a" font-size="15" font-weight="700">交互方式</text>
+  <g font-size="13" fill="#334155">
+    <text x="44" y="162">🖱 左键拖拽 — 旋转视角</text>
+    <text x="44" y="194">🔍 滚轮 — 缩放</text>
+    <text x="44" y="226">🖱 右键拖拽 — 平移</text>
+    <text x="44" y="258">👆 左键点击箱子 — 选中</text>
+  </g>
+  <rect x="44" y="282" width="260" height="1" fill="#e2e8f0"/>
+  <text x="44" y="312" fill="#0f172a" font-size="15" font-weight="700">由内向外推进</text>
+  <g font-size="12" fill="#475569">
+    <text x="44" y="340">① 第一托底层 → ② 隔壁交错</text>
+    <text x="44" y="362">第二托底层 → ③ 第一托第二层</text>
+    <text x="44" y="384">④ 第二托第二层 … 依次向外</text>
+    <text x="44" y="412" fill="#64748b">贴合人工码盘习惯，密度更高</text>
+  </g>
+  <rect x="44" y="436" width="260" height="30" rx="6" fill="#eff6ff"/>
+  <text x="56" y="456" fill="#1d4ed8" font-size="12">砖砌交错：40HQ+1200×1000 托 = 22 托/层</text>
+</svg>

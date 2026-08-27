@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <rect width="1000" height="640" fill="#ffffff"/>
+  <rect x="0" y="0" width="1000" height="56" fill="#0f172a"/>
+  <text x="24" y="35" fill="#f8fafc" font-size="20" font-weight="700">装柜大师 Loader Master</text>
+  <text x="300" y="35" fill="#94a3b8" font-size="14">集装箱装柜计算工具 · 浏览器一键算</text>
+
+  <!-- 左：设置面板 -->
+  <rect x="24" y="80" width="300" height="540" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="44" y="112" fill="#0f172a" font-size="16" font-weight="700">① 选择柜型</text>
+  <rect x="44" y="128" width="260" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="58" y="153" fill="#334155" font-size="14">40HQ（高柜 · 默认）</text>
+  <path d="M280 145 l8 8 l8 -8" fill="none" stroke="#64748b" stroke-width="2"/>
+
+  <text x="44" y="200" fill="#0f172a" font-size="15" font-weight="700">内置标准集装箱</text>
+  <g font-size="12" fill="#475569">
+    <rect x="44" y="214" width="260" height="78" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="56" y="234" fill="#0f172a" font-weight="700">20GP</text><text x="150" y="234">5.94×2.34×2.39 m</text>
+    <text x="230" y="234" fill="#0369a1" font-weight="700">28t</text>
+    <text x="56" y="256" fill="#0f172a" font-weight="700">40GP</text><text x="150" y="256">12.06×2.34×2.39 m</text>
+    <text x="230" y="256" fill="#0369a1" font-weight="700">28.8t</text>
+    <text x="56" y="278" fill="#0f172a" font-weight="700">40HQ</text><text x="150" y="278">12.06×2.34×2.69 m</text>
+    <text x="230" y="278" fill="#0369a1" font-weight="700">30.2t</text>
+    <rect x="44" y="302" width="260" height="26" rx="6" fill="#eff6ff"/>
+    <text x="56" y="320" fill="#1d4ed8">45HQ（加长高柜，参考值）</text>
+  </g>
+
+  <text x="44" y="368" fill="#0f172a" font-size="15" font-weight="700">摆放顺序</text>
+  <rect x="44" y="382" width="124" height="34" rx="6" fill="#0ea5e9" />
+  <text x="62" y="404" fill="#fff" font-size="13">从里到外</text>
+  <rect x="180" y="382" width="124" height="34" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="198" y="404" fill="#475569" font-size="13">从外到里</text>
+
+  <text x="44" y="452" fill="#0f172a" font-size="15" font-weight="700">箱间隙</text>
+  <rect x="44" y="466" width="180" height="34" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="58" y="488" fill="#334155" font-size="13">0 mm</text>
+
+  <rect x="44" y="528" width="260" height="44" rx="8" fill="#f59e0b"/>
+  <text x="120" y="556" fill="#fff" font-size="15" font-weight="700">🚀 计算装柜</text>
+
+  <!-- 中：3D 预览 -->
+  <rect x="348" y="80" width="356" height="540" rx="10" fill="#0b1220" stroke="#1e293b"/>
+  <text x="368" y="108" fill="#e2e8f0" font-size="15" font-weight="700">③ 3D 预览</text>
+  <text x="368" y="128" fill="#64748b" font-size="12">拖拽旋转 · 滚轮缩放 · 右键平移</text>
+  <g transform="translate(526,360)">
+    <polygon points="0,-120 150,-50 -10,20 -160,-50" fill="#1e293b" stroke="#334155"/>
+    <polygon points="-160,-50 -10,20 -10,140 -160,70" fill="#111827" stroke="#334155"/>
+    <polygon points="150,-50 -10,20 -10,140 150,70" fill="#0f1723" stroke="#334155"/>
+    <g fill="#38bdf8" opacity="0.85">
+      <rect x="-120" y="-30" width="34" height="34" rx="3"/>
+      <rect x="-82" y="-30" width="34" height="34" rx="3"/>
+      <rect x="-44" y="-30" width="34" height="34" rx="3"/>
+      <rect x="-120" y="10" width="34" height="34" rx="3"/>
+      <rect x="-82" y="10" width="34" height="34" rx="3"/>
+      <rect x="-44" y="10" width="34" height="34" rx="3"/>
+    </g>
+    <g fill="#818cf8" opacity="0.85">
+      <rect x="20" y="-30" width="34" height="34" rx="3"/>
+      <rect x="58" y="-30" width="34" height="34" rx="3"/>
+      <rect x="20" y="10" width="34" height="34" rx="3"/>
+      <rect x="58" y="10" width="34" height="34" rx="3"/>
+    </g>
+  </g>
+
+  <!-- 右：结果 -->
+  <rect x="728" y="80" width="248" height="540" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="748" y="112" fill="#0f172a" font-size="16" font-weight="700">④ 结果与导出</text>
+  <rect x="748" y="128" width="208" height="120" rx="8" fill="#fff" stroke="#e2e8f0"/>
+  <text x="762" y="152" fill="#0f172a" font-size="13" font-weight="700">汇总</text>
+  <text x="762" y="176" fill="#334155" font-size="12">需 1 个 40HQ 柜</text>
+  <text x="762" y="196" fill="#334155" font-size="12">总件数 240 · 总重 3.6t</text>
+  <text x="762" y="216" fill="#334155" font-size="12">体积利用率 68%</text>
+  <text x="762" y="236" fill="#dc2626" font-size="12">⚠ 重心略偏，建议调整</text>
+
+  <rect x="748" y="262" width="208" height="36" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="762" y="285" fill="#475569" font-size="13">📄 导出 PDF 作业单</text>
+  <rect x="748" y="306" width="208" height="36" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="762" y="329" fill="#475569" font-size="13">📊 导出 Excel 明细</text>
+  <rect x="748" y="350" width="208" height="36" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <text x="762" y="373" fill="#475569" font-size="13">📥 下载导入模板</text>
+
+  <text x="748" y="430" fill="#0f172a" font-size="14" font-weight="700">货物明细（节选）</text>
+  <g font-size="11" fill="#475569">
+    <text x="748" y="454">#1 A款礼盒 · 柜① (0,0,0)</text>
+    <text x="748" y="474">#2 A款礼盒 · 柜① (300,0,0)</text>
+    <text x="748" y="494">#3 B款盒 · 柜① (0,0,300)</text>
+  </g>
+  <text x="748" y="540" fill="#64748b" font-size="11">点击任意箱子可旋转 / 删除</text>
+  <text x="748" y="560" fill="#64748b" font-size="11">选中的箱子弹出底部浮层菜单</text>
+</svg>

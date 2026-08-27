@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="24" y="40" fill="#0f172a" font-size="20" font-weight="700">④ 导出 PDF / Excel 作业单</text>
+  <text x="24" y="64" fill="#64748b" font-size="14">一键生成中文作业单，含汇总、3D 示意图、货物明细与仓库作业说明</text>
+
+  <!-- 左侧：导出按钮 -->
+  <rect x="24" y="96" width="300" height="200" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="44" y="126" fill="#0f172a" font-size="15" font-weight="700">导出与导入</text>
+  <rect x="44" y="142" width="260" height="40" rx="8" fill="#0ea5e9"/>
+  <text x="120" y="168" fill="#fff" font-size="14" font-weight="700">📄 导出 PDF 作业单</text>
+  <rect x="44" y="192" width="260" height="40" rx="8" fill="#fff" stroke="#cbd5e1"/>
+  <text x="128" y="218" fill="#334155" font-size="14">📊 导出 Excel 明细</text>
+  <rect x="44" y="242" width="260" height="40" rx="8" fill="#fff" stroke="#cbd5e1"/>
+  <text x="128" y="268" fill="#334155" font-size="14">📥 下载导入模板</text>
+
+  <rect x="24" y="316" width="300" height="160" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="44" y="346" fill="#1d4ed8" font-size="14" font-weight="700">PDF 作业单内容</text>
+  <g font-size="12" fill="#334155">
+    <text x="44" y="374">• 汇总表（柜数/件数/重量/体积率）</text>
+    <text x="44" y="398">• 3D 装柜示意图</text>
+    <text x="44" y="422">• 货物明细（柜号/坐标/尺寸）</text>
+    <text x="44" y="446">• 仓库作业说明</text>
+    <text x="44" y="462" fill="#64748b">表格自适应字号，避免列重叠</text>
+  </g>
+
+  <!-- 右侧：PDF 作业单样张 -->
+  <rect x="360" y="96" width="616" height="468" rx="10" fill="#fff" stroke="#cbd5e1"/>
+  <rect x="360" y="96" width="616" height="40" rx="10" fill="#0f172a"/>
+  <text x="384" y="122" fill="#f8fafc" font-size="15" font-weight="700">装柜作业单 · 40HQ</text>
+  <text x="900" y="122" fill="#94a3b8" font-size="11">2026-08-27</text>
+
+  <text x="384" y="164" fill="#0f172a" font-size="13" font-weight="700">一、汇总</text>
+  <rect x="384" y="176" width="568" height="56" rx="6" fill="#f1f5f9"/>
+  <g font-size="12" fill="#334155">
+    <text x="400" y="198">所需柜数：1</text><text x="540" y="198">总件数：240</text><text x="700" y="198">总重：3.6 t</text>
+    <text x="400" y="220">体积利用率：68%</text><text x="540" y="220">载重利用率：12%</text>
+  </g>
+
+  <text x="384" y="260" fill="#0f172a" font-size="13" font-weight="700">二、3D 示意图</text>
+  <g transform="translate(560,330)">
+    <polygon points="0,-70 110,-30 -10,10 -120,-30" fill="#e2e8f0" stroke="#94a3b8"/>
+    <polygon points="-120,-30 -10,10 -10,90 -120,50" fill="#cbd5e1" stroke="#94a3b8"/>
+    <polygon points="110,-30 -10,10 -10,90 110,50" fill="#b8c2cf" stroke="#94a3b8"/>
+    <g fill="#38bdf8">
+      <rect x="-90" y="-12" width="22" height="18" rx="2"/><rect x="-64" y="-12" width="22" height="18" rx="2"/><rect x="-38" y="-12" width="22" height="18" rx="2"/>
+      <rect x="-90" y="14" width="22" height="18" rx="2"/><rect x="-64" y="14" width="22" height="18" rx="2"/><rect x="-38" y="14" width="22" height="18" rx="2"/>
+    </g>
+    <g fill="#818cf8">
+      <rect x="20" y="-12" width="22" height="18" rx="2"/><rect x="46" y="-12" width="22" height="18" rx="2"/>
+      <rect x="20" y="14" width="22" height="18" rx="2"/><rect x="46" y="14" width="22" height="18" rx="2"/>
+    </g>
+  </g>
+
+  <text x="384" y="416" fill="#0f172a" font-size="13" font-weight="700">三、货物明细（节选）</text>
+  <rect x="384" y="428" width="568" height="110" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+  <g font-size="11" fill="#334155">
+    <text x="396" y="450" font-weight="700">#</text><text x="430" y="450" font-weight="700">名称</text><text x="560" y="450" font-weight="700">柜号</text><text x="640" y="450" font-weight="700">坐标(mm)</text><text x="800" y="450" font-weight="700">托</text>
+    <text x="396" y="472">1</text><text x="430" y="472">A款礼盒</text><text x="560" y="472">①</text><text x="640" y="472">(0,0,0)</text><text x="800" y="472">T1</text>
+    <text x="396" y="494">2</text><text x="430" y="494">A款礼盒</text><text x="560" y="494">①</text><text x="640" y="494">(300,0,0)</text><text x="800" y="494">T1</text>
+    <text x="396" y="516">3</text><text x="430" y="516">B款盒</text><text x="560" y="516">①</text><text x="640" y="516">(0,0,300)</text><text x="800" y="516">T2</text>
+  </g>
+  <text x="384" y="560" fill="#dc2626" font-size="11">⚠ 提示：本单为模拟估算，实际装柜请结合现场确认。</text>
+</svg>
