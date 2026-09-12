@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>在线标签编辑器 · 使用说明 | 星辰月光酿大树</title><meta name="author" content="星辰月光酿大树"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="在线标签编辑器（Label Editor）完整使用说明：画布与视图、对象添加、条码二维码、多选编排、模板复用、PDF&#x2F;PNG 导出、Excel 批量套打与移动端操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在线标签编辑器 · 使用说明">
+<meta property="og:url" content="https://057300.xyz/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="星辰月光酿大树">
+<meta property="og:description" content="在线标签编辑器（Label Editor）完整使用说明：画布与视图、对象添加、条码二维码、多选编排、模板复用、PDF&#x2F;PNG 导出、Excel 批量套打与移动端操作。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://057300.xyz/img/label-editor-usage/ui-overview.png">
+<meta property="article:published_time" content="2026-09-12T04:40:00.000Z">
+<meta property="article:modified_time" content="2026-09-12T04:40:32.130Z">
+<meta property="article:author" content="星辰月光酿大树">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="标签编辑器">
+<meta property="article:tag" content="使用说明">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://057300.xyz/img/label-editor-usage/ui-overview.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在线标签编辑器 · 使用说明",
+  "url": "https://057300.xyz/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/",
+  "image": "https://057300.xyz/img/label-editor-usage/ui-overview.png",
+  "datePublished": "2026-09-12T04:40:00.000Z",
+  "dateModified": "2026-09-12T04:40:32.130Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "星辰月光酿大树",
+      "url": "https://057300.xyz"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://057300.xyz/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '在线标签编辑器 · 使用说明',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><style>#footer{background-color:transparent!important;color:var(--font-color)}#footer a{color:var(--font-color)}#footer a:hover{color:var(--theme-color)}#footer .footer-other{background:none!important}.avatar-img{animation:avatar_turn_around 4s linear infinite!important}</style><meta name="baidu-site-verification" content="codeva-miQcAZD1WS" /><meta name="generator" content="Hexo 7.3.0"></head><body><div class="bg-animation" id="web_bg" style="background-color: #f7f9fe;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/lite_MD_editor/"><i class="fa-fw fas fa-edit"></i><span> MD编辑器</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/diecut/"><i class="fa-fw fas fa-box"></i><span> 纸盒刀版</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/loader-master/"><i class="fa-fw fas fa-truck-loading"></i><span> 装柜大师</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/label-editor/"><i class="fa-fw fas fa-tags"></i><span> 在线标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/img/label-editor-usage/ui-overview.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">星辰月光酿大树</span></a><a class="nav-page-title" href="/"><span class="site-name">在线标签编辑器 · 使用说明</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/lite_MD_editor/"><i class="fa-fw fas fa-edit"></i><span> MD编辑器</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/diecut/"><i class="fa-fw fas fa-box"></i><span> 纸盒刀版</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/loader-master/"><i class="fa-fw fas fa-truck-loading"></i><span> 装柜大师</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/label-editor/"><i class="fa-fw fas fa-tags"></i><span> 在线标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">在线标签编辑器 · 使用说明</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-09-12T04:40:00.000Z" title="发表于 2026-09-12 12:40:00">2026-09-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-09-12T04:40:32.130Z" title="更新于 2026-09-12 12:40:32">2026-09-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/">在线工具</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2026-09-12 12:40:32&quot;}" hidden></div><section style="background:#ffffff;border-radius:12px;font-family:'PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;line-height:1.9;color:#1e293b;padding:12px 16px;max-width:100%;">
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">一个<strong>单文件标签 / 不干胶 / 条码标签</strong>可视化编辑器：在浏览器里拖拽排版文本、形状、图片与矢量条码，所见即所得地设计标签，并导出为 <strong>PDF（矢量）/ PNG</strong> 或批量打印。</p>
+<div style="background:#f0fdfa;border-left:4px solid #14b8a6;padding:12px 16px;margin:14px 0;border-radius:0 8px 8px 0;font-size:14px;color:#115e59;line-height:1.8;">🔗 在线演示：<a href="https://057300.xyz/label-editor/" style="color:#0d9488;text-decoration:none;word-break:break-all;" target="_blank">https://057300.xyz/label-editor/</a></div>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/ui-overview.png" alt="编辑器界面预览" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<p style="text-align:center;color:#94a3b8;font-size:13px;margin:0 0 18px 0;line-height:1.6;">三栏式编辑器：左侧工具箱 · 中间无限画布 · 右侧属性面板 · 底部数据栏</p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">✨ 功能特性</h2>
+<div style="overflow-x:auto;margin:14px 0;"><table style="border-collapse:collapse;width:100%;font-size:14px;line-height:1.6;"><thead><tr><th style="border:1px solid #e2e8f0;padding:9px 12px;background:#f0fdfa;color:#0f766e;font-weight:bold;text-align:left;white-space:nowrap;">类别</th><th style="border:1px solid #e2e8f0;padding:9px 12px;background:#f0fdfa;color:#0f766e;font-weight:bold;text-align:left;white-space:nowrap;">能力</th></tr></thead><tbody><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>画布</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">无限画布、CSS 视口缩放、滚轮以光标为中心缩放、中键拖动平移、双击中键「适应画布」</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>对象</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">文本、矩形、椭圆、直线、图片、条码、二维码</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>条码</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">Code128 / Code39 / EAN(EAN-13) / UPC / DataMatrix / QR，<strong>矢量矩形组</strong>渲染（扫码可用），二维码支持容错等级 <strong>L / M / Q / H</strong></td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>素材</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">内置 <strong>2100+</strong> 个矢量线稿图标（Lucide / 自绘包装储运标志 / Twemoji），按分类与关键词检索，插入后可改色与描边粗细</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>数据</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">上传 Excel / CSV，<strong>文本框名称与表头同名即自动绑定整列</strong>，按行预览、批量套打与批量导出</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>多选编排</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">6 种对齐（左/水平居中/右/上/垂直居中/下）、编组 / 解组</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>图层</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">置于顶层 / 置于底层 / 上移一层 / 下移一层</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>模板</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">保存到本地（localStorage）、打开、导入 / 导出 JSON 模板</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>导出</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">导出 PDF（矢量，扫码级精度）、导出 PNG、批量打印 / 批量导出</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>移动端</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">单击选中并编辑、双击弹出属性、底部抽屉式属性面板</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>持久化</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">序列化保存画布（含条码元数据），载入时自动重建矢量条码</td></tr></tbody></table></div>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">🧱 技术栈</h2>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>React 19</strong> + <strong>TypeScript（strict）</strong></li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>Vite 7</strong>（构建 / 开发服务器）</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>fabric.js 5.3</strong> — 画布与对象模型</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>bwip-js</strong> — 条码 / 二维码矢量渲染</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>jsPDF</strong> + 自研 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">vectorExport</code> — 矢量 PDF 导出</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>Tailwind CSS</strong> + <strong>Radix UI / shadcn 风格组件</strong> + <strong>Lucide</strong> 图标</li></ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">🚀 快速开始（本地开发）</h2>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">要求 <strong>Node.js ≥ 20.19</strong>（推荐 22 LTS）。</p>
+<pre style="background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.7;margin:14px 0;"><code style="font-family:Consolas,Monaco,monospace;white-space:pre;"># 1. 克隆仓库
+git clone git@github.com:bbb-pro/label-editor.git
+cd label-editor
+
+<h1 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2. 安装依赖"></a>2. 安装依赖</h1><p>npm install</p>
+<h1 id="3-启动开发服务器（默认-http-localhost-5173）"><a href="#3-启动开发服务器（默认-http-localhost-5173）" class="headerlink" title="3. 启动开发服务器（默认 http://localhost:5173）"></a>3. 启动开发服务器（默认 <a href="http://localhost:5173）">http://localhost:5173）</a></h1><p>npm run dev</p>
+<h1 id="4-生产构建（产物在-dist-）"><a href="#4-生产构建（产物在-dist-）" class="headerlink" title="4. 生产构建（产物在 dist&#x2F;）"></a>4. 生产构建（产物在 dist&#x2F;）</h1><p>npm run build</p>
+<h1 id="5-本地预览构建产物"><a href="#5-本地预览构建产物" class="headerlink" title="5. 本地预览构建产物"></a>5. 本地预览构建产物</h1><p>npm run preview</code></pre></p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">📖 使用说明</h2>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">1. 画布与视图</h3>
+<div style="overflow-x:auto;margin:14px 0;"><table style="border-collapse:collapse;width:100%;font-size:14px;line-height:1.6;"><thead><tr><th style="border:1px solid #e2e8f0;padding:9px 12px;background:#f0fdfa;color:#0f766e;font-weight:bold;text-align:left;white-space:nowrap;">操作</th><th style="border:1px solid #e2e8f0;padding:9px 12px;background:#f0fdfa;color:#0f766e;font-weight:bold;text-align:left;white-space:nowrap;">方式</th></tr></thead><tbody><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">缩放</td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">鼠标滚轮，<strong>以光标位置为锚点</strong>缩放</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">平移</td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">按住<strong>鼠标中键</strong>拖动</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">适应画布</td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">双击<strong>鼠标中键</strong>，或点顶部「适应」按钮</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">回到 100%</td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">点顶部「100%」按钮</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">无限画布</td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">拖到边缘时画布自动扩展，永不被截断</td></tr></tbody></table></div>
+<div style="background:#f0fdfa;border-left:4px solid #14b8a6;padding:12px 16px;margin:14px 0;border-radius:0 8px 8px 0;font-size:14px;color:#115e59;line-height:1.8;">首次打开、新建、导入模板均默认 <strong>100%</strong> 视图，刷新浏览器不会跳变。</div>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">2. 添加对象</h3>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">左侧工具箱提供：<strong>文本 · 矩形 · 椭圆 · 直线 · 图片 · 条码 · 二维码</strong>，点击即在画布中心创建。</p>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>文本</strong>：双击编辑文字；拉伸文本框只改变框尺寸，<strong>字号不变</strong>。</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>图片</strong>：从本地选择图片文件插入。</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>条码 / 二维码</strong>：在属性面板设置内容与参数（见第 4 节）。</li></ul>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">3. 选中与属性编辑</h3>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">单击对象选中，右侧 <strong>属性面板</strong> 显示可编辑项：</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">文本：字号、字体、颜色、加粗 / 斜体、对齐</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">形状：填充色、描边色、描边宽度</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">条码 / 二维码：码制类型、内容、尺寸（mm）、容错等级</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">对象可拖到标签<strong>之外</strong>的画布区域临时摆放，仅标签纸范围内的对象参与导出 / 打印。</li></ul>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">4. 条码与二维码</h3>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">插入条码后，在属性面板中配置：</p>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>码制类型</strong>：Code128 / Code39 / EAN-13 / UPC / DataMatrix / QR</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>内容</strong>：要编码的文本或数据</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>目标尺寸</strong>：以毫米（mm）设置实际打印大小</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>容错等级（仅 QR）</strong>：<code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">L</code>（低，~7%）/ <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">M</code>（中，~15%）/ <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">Q</code>（较高，~25%）/ <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">H</code>（高，~30%）</li></ul>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">条码以<strong>矢量矩形组</strong>方式渲染（非位图），PDF 导出后仍为矢量，扫码设备可直接识别。</p>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/barcode-panel.png" alt="条码属性面板" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<p style="text-align:center;color:#94a3b8;font-size:13px;margin:0 0 18px 0;line-height:1.6;">选中条码后，右侧面板可改名称、位置尺寸（mm）、码制类型与人眼可读文字</p>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">5. 多选编排</h3>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">框选或按住 Shift 选中 <strong>2 个及以上</strong> 对象后，顶部工具条激活：</p>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>对齐</strong>：左对齐 / 水平居中 / 右对齐 / 顶对齐 / 垂直居中 / 底对齐</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>编组 / 解组</strong>：将多个对象组合为整体统一移动缩放，或拆分还原</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>层次</strong>：置于顶层 / 置于底层 / 上移一层 / 下移一层</li></ul>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/multi-select.png" alt="多选与对齐工具条" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<p style="text-align:center;color:#94a3b8;font-size:13px;margin:0 0 18px 0;line-height:1.6;">框选或 Shift 多选后，顶部工具条点亮编组 / 解组 / 对齐 / 层次</p>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">6. 模板（保存与复用）</h3>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>保存模板</strong>：将当前画布存入浏览器本地（localStorage），下次打开自动恢复。</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>打开模板</strong>：载入已保存的模板。</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;"><strong>导入 / 导出 JSON</strong>：把整个画布序列化为 JSON 文件，便于备份、版本管理或跨设备迁移（条码以元数据形式保存，导入后自动重建矢量条码）。</li></ul>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">7. 导出</h3>
+<div style="overflow-x:auto;margin:14px 0;"><table style="border-collapse:collapse;width:100%;font-size:14px;line-height:1.6;"><thead><tr><th style="border:1px solid #e2e8f0;padding:9px 12px;background:#f0fdfa;color:#0f766e;font-weight:bold;text-align:left;white-space:nowrap;">方式</th><th style="border:1px solid #e2e8f0;padding:9px 12px;background:#f0fdfa;color:#0f766e;font-weight:bold;text-align:left;white-space:nowrap;">说明</th></tr></thead><tbody><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>导出 PDF</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">矢量 PDF，条码 / 图形均为矢量，适合印刷</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>导出 PNG</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">位图快照，便于快速分享</td></tr><tr><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;"><strong>批量打印 / 批量导出</strong></td><td style="border:1px solid #e2e8f0;padding:9px 12px;color:#334155;vertical-align:top;">依据模板在单页上按网格重复排布多份标签后打印或导出</td></tr></tbody></table></div>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/batch-print.png" alt="批量打印对话框" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<p style="text-align:center;color:#94a3b8;font-size:13px;margin:0 0 18px 0;line-height:1.6;">已绑定数据或启用序列号时，打印 / 导出前会询问份数或行数</p>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">8. 素材库（内置 2100+ 矢量图标）</h3>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">点击左侧「素材」打开素材库，支持<strong>分类筛选</strong>（储运标志 / 通用 / 计量单位 / 时间日期 / 安全警示）与<strong>关键词搜索</strong>。图标全部为矢量线稿，插入后可在属性面板统一改颜色与描边粗细，导出 PDF 时保持矢量。</p>
+<div style="background:#f0fdfa;border-left:4px solid #14b8a6;padding:12px 16px;margin:14px 0;border-radius:0 8px 8px 0;font-size:14px;color:#115e59;line-height:1.8;">图标来源：Lucide（ISC）· 包装储运标志（自绘，GB/T 191 语义）· Twemoji（CC-BY 4.0）</div>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/assets-library.png" alt="素材库" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">9. 数据与批量套打</h3>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">上传 <strong>Excel / CSV</strong> 后，<strong>画布中名称与表头同名的文本/条码会自动绑定整列数据</strong>；点击数据行即可在画布上预览该行效果，<code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">&#123;&#123;字段&#125;&#125;</code> 变量自动替换。</p>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">点击打印 / 导出时，若检测到数据绑定，会先询问要输出的行数，<strong>每行按对应数据生成一张</strong>——这就是 Excel 批量套打的完整闭环。</p>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/data-binding.png" alt="数据绑定与批量套打" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<p style="text-align:center;color:#94a3b8;font-size:13px;margin:0 0 18px 0;line-height:1.6;">底部数据栏显示已载入的数据表；画布标签按选中行实时替换字段</p>
+<h3 style="font-size:16px;font-weight:bold;color:#0f766e;margin:20px 0 10px;">10. 移动端</h3>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">窄屏下自动切换紧凑布局：工具箱竖向排列、顶部按钮图标化、属性面板改为<strong>底部抽屉式</strong>，支持单击选中、双击编辑，手机上也能完成基本排版。</p>
+<p style="text-align:center;margin:16px 0 4px 0;"><img src="/img/label-editor-usage/mobile.png" alt="移动端布局" style="max-width:100%;border-radius:8px;display:inline-block;box-shadow:0 1px 6px rgba(0,0,0,.08);"></p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">🌐 部署（GitHub Pages）</h2>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">本项目通过 <strong>GitHub Actions</strong> 实现「推送即部署」：</p>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">推送（或合并 PR）到 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">main</code> 分支会自动触发工作流 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">.github/workflows/deploy.yml</code>：</li></ul>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">1. <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">npm ci</code> 安装依赖 2. <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">npm run build</code> 构建到 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">dist/</code> 3. 通过 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">peaceiris/actions-gh-pages</code> 将 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">dist/</code> 发布到 <strong><code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">gh-pages</code></strong> 分支</p>
+<ul style="margin:12px 0 16px 0;padding-left:22px;"><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">GitHub Pages 的发布源已设为 <strong><code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">gh-pages</code> 分支（/ 根目录）</strong>。</li><li style="margin:0 0 8px 0;color:#334155;line-height:1.7;">自定义域名 <strong><code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">057300.xyz</code></strong> 由 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">public/CNAME</code> 与 Actions 中的 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">cname</code> 共同保证。</li></ul>
+<div style="background:#f0fdfa;border-left:4px solid #14b8a6;padding:12px 16px;margin:14px 0;border-radius:0 8px 8px 0;font-size:14px;color:#115e59;line-height:1.8;">开发时只需专注 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">main</code> 分支源码；上线无需手动构建，提交即生效（通常 1 分钟内）。</div>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">手动部署（备用）：本地 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">npm run build</code> 后，把 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">dist/</code> 内容推到 <code style="background:#f1f5f9;color:#0f172a;padding:1px 5px;border-radius:4px;font-size:0.92em;">gh-pages</code> 分支根目录即可。</p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">📁 项目结构（要点）</h2>
+<pre style="background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.7;margin:14px 0;"><code style="font-family:Consolas,Monaco,monospace;white-space:pre;">src/
+├─ lib/
+│  ├─ canvasEngine.ts     # 画布引擎：对象增删改、视图变换、编组/对齐/图层
+│  ├─ barcode.ts          # 条码/二维码类型与参数
+│  ├─ assetsLib.ts        # 素材库：SVG 图标检索与渲染
+│  ├─ spreadsheet.ts      # Excel / CSV 解析与数据绑定
+│  ├─ export.ts           # PDF / PNG / 批量打印
+│  └─ vectorExport.ts     # 矢量 PDF 导出（矢量条码）
+├─ sections/
+│  ├─ TopBar.tsx          # 顶部工具条（编组/对齐/层次/适应/100%）
+│  ├─ Toolbox.tsx         # 左侧对象工具箱
+│  ├─ PropertyPanel.tsx   # 右侧属性面板（含条码面板）
+│  ├─ AssetsPanel.tsx     # 素材库面板
+│  └─ DataDock.tsx        # 数据栏（Excel / CSV 与模板）
+├─ components/editor/      # 编辑器子组件（批量打印对话框等）
+└─ App.tsx                # 应用入口与编排
+
+<p>docs&#x2F;images&#x2F;               # README 截图（由编辑器实跑生成）</code></pre></p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:24px 0;">
+<h2 style="font-size:18px;font-weight:bold;color:#0f766e;margin:30px 0 14px;padding-left:12px;border-left:4px solid #0f766e;line-height:1.5;">📄 License</h2>
+<p style="margin:0 0 16px 0;font-size:15px;color:#334155;line-height:1.9;">MIT © bbb-pro</p>
+</section>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://057300.xyz">星辰月光酿大树</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://057300.xyz/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">https://057300.xyz/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://057300.xyz" target="_blank">星辰月光酿大树</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a><a class="post-meta__tags" href="/tags/%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8/">标签编辑器</a><a class="post-meta__tags" href="/tags/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">使用说明</a></div><div class="post-share"><div class="social-share" data-image="/img/label-editor-usage/ui-overview.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/09/08/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-Label-Editor-%E4%BB%8B%E7%BB%8D/" title="在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具</div></div><div class="info-2"><div class="info-item-1">一个单文件标签 &#x2F; 不干胶 &#x2F; 条码标签可视化编辑器：在浏览器里拖拽排版文本、形状、图片与矢量条码，所见即所得地设计标签，并导出为 PDF（矢量）&#x2F; PNG 或批量打印。  🔗 在线演示：https://057300.xyz/label-editor/   ✨ 功能特性   类别 能力    画布 无限画布、CSS 视口缩放、滚轮以光标为中心缩放、中键拖动平移、双击中键「适应画布」   对象 文本、矩形、椭圆、直线、图片、条码、二维码   条码 Code128 &#x2F; Code39 &#x2F; EAN(EAN-13) &#x2F; UPC &#x2F; DataMatrix &#x2F; QR，矢量矩形组渲染（扫码可用），二维码支持容错等级 L &#x2F; M &#x2F; Q &#x2F; H   多选编排 6 种对齐（左&#x2F;水平居中&#x2F;右&#x2F;上&#x2F;垂直居中&#x2F;下）、编组 &#x2F; 解组   图层 置于顶层 &#x2F; 置于底层 &#x2F; 上移一层 &#x2F; 下移一层   模板 保存...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/09/08/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-Label-Editor-%E4%BB%8B%E7%BB%8D/" title="在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-08</div><div class="info-item-2">在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具</div></div><div class="info-2"><div class="info-item-1">一个单文件标签 &#x2F; 不干胶 &#x2F; 条码标签可视化编辑器：在浏览器里拖拽排版文本、形状、图片与矢量条码，所见即所得地设计标签，并导出为 PDF（矢量）&#x2F; PNG 或批量打印。  🔗 在线演示：https://057300.xyz/label-editor/   ✨ 功能特性   类别 能力    画布 无限画布、CSS 视口缩放、滚轮以光标为中心缩放、中键拖动平移、双击中键「适应画布」   对象 文本、矩形、椭圆、直线、图片、条码、二维码   条码 Code128 &#x2F; Code39 &#x2F; EAN(EAN-13) &#x2F; UPC &#x2F; DataMatrix &#x2F; QR，矢量矩形组渲染（扫码可用），二维码支持容错等级 L &#x2F; M &#x2F; Q &#x2F; H   多选编排 6 种对齐（左&#x2F;水平居中&#x2F;右&#x2F;上&#x2F;垂直居中&#x2F;下）、编组 &#x2F; 解组   图层 置于顶层 &#x2F; 置于底层 &#x2F; 上移一层 &#x2F; 下移一层   模板 保存...</div></div></div></a><a class="pagination-related" href="/2026/08/27/%E8%A3%85%E6%9F%9C%E5%A4%A7%E5%B8%88-Loader-Master-%E9%9B%86%E8%A3%85%E7%AE%B1%E8%A3%85%E6%9F%9C%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/" title="装柜大师 Loader Master —— 浏览器里的集装箱装柜计算工具"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-27</div><div class="info-item-2">装柜大师 Loader Master —— 浏览器里的集装箱装柜计算工具</div></div><div class="info-2"><div class="info-item-1"> 发货前心里没底：这柜子到底能装多少？怎么码最省空间？重心稳不稳？装柜大师（Loader Master） 是一个单文件、零依赖的浏览器端集装箱装柜计算工具，帮你一键算出「怎么码、能装多少、重心稳不稳」，还能导出 PDF 作业单。  ✨ 这是什么装柜大师是一个纯前端的集装箱装载规划工具：无需后端、无需安装，双击 HTML 即可在任意现代浏览器运行。它适用于外贸、仓储、物流、拼柜等场景，帮你在发货前快速得到一份可落地的装柜方案。  🌐 在线使用：https://057300.xyz/loader-master/   🚀 三步上手 选柜型：顶部下拉框选目标集装箱（默认 40HQ），内置 20GP &#x2F; 40GP &#x2F; 40HQ &#x2F; 45HQ 四种标准内尺寸与限重。 加货物：点「＋ 添加货物」填尺寸、重量、数量，勾选托盘可看实时打托预览。 算方案：点「🚀 计算装柜」，立刻得到 3D 装柜图、汇总表、货物明细与告警提示，再一键导出 PDF &#x2F; Excel。  📖 操作演示① 选择柜型在顶部「柜型」下拉框选择目标集装箱，默认 40HQ。内置标准集装...</div></div></div></a><a class="pagination-related" href="/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/" title="🎉 Lite MD Editor v1.0.0 正式发布"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-22</div><div class="info-item-2">🎉 Lite MD Editor v1.0.0 正式发布</div></div><div class="info-2"><div class="info-item-1">Lite MD Editor v1.0.0🎉 首个正式版本轻量化的 Markdown 编辑器，像 Word 一样编辑和阅读 .md 文件，纯本地运行，无需登录和联网。 ✨ 功能特性 📝 Markdown 编辑：完整语法支持，代码块高亮 👁️ 实时预览：支持 GitHub Flavored Markdown（表格、任务列表、删除线等） 🔀 三种模式：编辑 &#x2F; 分屏（默认）&#x2F; 预览，一键切换 🗂️ 文件操作：新建、打开、保存、另存为 📄 PDF 导出：一键导出为 PDF（Ctrl+E） 🎨 Word 风格工具栏：标题、加粗、斜体、列表、链接、代码块、表格等快捷按钮 ⌨️ 键盘快捷键：Ctrl+S&#x2F;N&#x2F;O&#x2F;Shift+S&#x2F;B&#x2F;I&#x2F;E 📊 状态栏：文件名、保存状态、字数统计（中英文混合） 🚫 纯本地：无后端、无登录、无网络请求  📦 下载   文件 说明 适用    Lite-MD-Editor-Setup-1.0.0.exe NSIS 安装包（约 78MB） 推荐普通用户，双击安装   ...</div></div></div></a><a class="pagination-related" href="/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/" title="免费的在线刀版工具发布简介"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-07-24</div><div class="info-item-2">免费的在线刀版工具发布简介</div></div><div class="info-2"><div class="info-item-1">项目简介DieCut Designer 是一个纯前端（无框架）的刀模设计工具，内置 1278 种标准纸盒盒型。用户可以通过改变长 &#x2F; 宽 &#x2F; 高等参数，实时生成对应的刀线（裁切）与压线（折痕）展开图，并一键导出为 SVG &#x2F; DXF &#x2F; PDF 三种格式，直接对接打样、模切与 CAD 流程。 核心数据流：参数变化 → 防抖 → 调用 Packmage API 计算几何 → 前端渲染 SVG 刀模图 → 导出。 线上地址：http://057300.xyz/diecut/  功能特性 完整盒型库（1278 种）：覆盖 FEFCO &#x2F; 卡纸盒 &#x2F; 礼盒 &#x2F; 异形盒等，支持关键词与盒型 ID 搜索，按分类浏览。 参数化实时调整：修改长（L）、宽（W）、高（D）等参数后，刀模图在 1~2 秒内自动重算并刷新，自动适配视图。 专业刀模渲染： 刀线（裁切）红色实线，压线（折痕）蓝色虚线，符合印前规范。 坐标单位为毫米（mm），可直接用于生产。 支持尺寸标注（Dimensions）、网格（Grid）、部件标签（Labels）...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">星辰月光酿大树</div><div class="author-info-description">一个打工仔</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bbb-pro/bbb-pro.github.io"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/bbb-pro/bbb-pro.github.io" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到星辰月光酿大树！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">✨ 功能特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">🧱 技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">🚀 快速开始（本地开发）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number"></span> <span class="toc-text">2. 安装依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%90%AF%E5%8A%A8%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88%E9%BB%98%E8%AE%A4-http-localhost-5173%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">3. 启动开发服务器（默认 http:&#x2F;&#x2F;localhost:5173）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%94%9F%E4%BA%A7%E6%9E%84%E5%BB%BA%EF%BC%88%E4%BA%A7%E7%89%A9%E5%9C%A8-dist-%EF%BC%89"><span class="toc-number"></span> <span class="toc-text">4. 生产构建（产物在 dist&#x2F;）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88%E6%9E%84%E5%BB%BA%E4%BA%A7%E7%89%A9"><span class="toc-number"></span> <span class="toc-text">5. 本地预览构建产物</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">📖 使用说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 画布与视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 添加对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 选中与属性编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 条码与二维码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 多选编排</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.6.</span> <span class="toc-text">6. 模板（保存与复用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.7.</span> <span class="toc-text">7. 导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.8.</span> <span class="toc-text">8. 素材库（内置 2100+ 矢量图标）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.9.</span> <span class="toc-text">9. 数据与批量套打</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.10.</span> <span class="toc-text">10. 移动端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">🌐 部署（GitHub Pages）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">📁 项目结构（要点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">📄 License</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="在线标签编辑器 · 使用说明"><img src="/img/label-editor-usage/ui-overview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在线标签编辑器 · 使用说明"/></a><div class="content"><a class="title" href="/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="在线标签编辑器 · 使用说明">在线标签编辑器 · 使用说明</a><time datetime="2026-09-12T04:40:00.000Z" title="发表于 2026-09-12 12:40:00">2026-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/08/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-Label-Editor-%E4%BB%8B%E7%BB%8D/" title="在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具">在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具</a><time datetime="2026-09-07T16:00:00.000Z" title="发表于 2026-09-08 00:00:00">2026-09-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/27/%E8%A3%85%E6%9F%9C%E5%A4%A7%E5%B8%88-Loader-Master-%E9%9B%86%E8%A3%85%E7%AE%B1%E8%A3%85%E6%9F%9C%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/" title="装柜大师 Loader Master —— 浏览器里的集装箱装柜计算工具">装柜大师 Loader Master —— 浏览器里的集装箱装柜计算工具</a><time datetime="2026-08-27T07:30:00.000Z" title="发表于 2026-08-27 15:30:00">2026-08-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/06/MiniMax-H3-%E8%A7%86%E9%A2%91%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%AE%98%E6%96%B9%E8%A7%84%E8%8C%83%E8%A7%A3%E8%AF%BB/" title="MiniMax H3 视频提示词官方规范解读">MiniMax H3 视频提示词官方规范解读</a><time datetime="2026-08-06T03:16:00.000Z" title="发表于 2026-08-06 11:16:00">2026-08-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/" title="免费的在线刀版工具发布简介">免费的在线刀版工具发布简介</a><time datetime="2026-07-24T05:36:00.000Z" title="发表于 2026-07-24 13:36:00">2026-07-24</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 星辰月光酿大树</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div><div class="footer_custom_text">热爱可抵岁月漫长</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"></div><script>(function(){function spin(){try{var avs=document.querySelectorAll('.avatar-img');avs.forEach(function(av){av.style.setProperty('animation-direction',Math.random()<0.5?'reverse':'normal','important');});}catch(e){}}if(document.readyState!=='loading'){spin();}else{document.addEventListener('DOMContentLoaded',spin);}document.addEventListener('pjax:complete',spin);window.addEventListener('load',spin);})();</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5"></script></div></div></body></html>
