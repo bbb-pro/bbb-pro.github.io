@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# 本站为同一域名下的多子站结构（GitHub Pages 用户站 + 项目子站），
+# 全部 sitemap 在此集中声明 —— 搜索引擎只读取根目录的 robots.txt。
 Sitemap: https://057300.xyz/sitemap.xml
+Sitemap: https://057300.xyz/diecut/sitemap.xml
+Sitemap: https://057300.xyz/loader-master/sitemap.xml
+Sitemap: https://057300.xyz/label-editor/sitemap.xml
+Sitemap: https://057300.xyz/lite_MD_editor/sitemap.xml
