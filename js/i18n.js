@@ -2,6 +2,7 @@
   'use strict';
   var I18N = {
     zh: {
+      'site.name': '包装&物流工具箱',
       'hero.badge': '免费 · 无需注册 · 纯前端',
       'hero.title': '把包装设计搬进浏览器',
       'hero.sub': '刀模设计 · 装柜计算 · 标签打印 · Markdown，四款在线工具打开即用',
@@ -21,6 +22,7 @@
       'lite_MD_editor.desc': '极简 Markdown · 离线可用'
     },
     en: {
+      'site.name': 'Packaging & Logistics Toolbox',
       'hero.badge': 'Free · No Sign-up · Pure Frontend',
       'hero.title': 'Move Packaging Design into the Browser',
       'hero.sub': 'DieCut · Load Planning · Label Printing · Markdown — four online tools, ready to use',
@@ -42,9 +44,6 @@
   };
   var MENU_MAP = {
     '首页': 'Home', 'Home': '首页',
-    '归档': 'Archives', 'Archives': '归档',
-    '分类': 'Categories', 'Categories': '分类',
-    '标签': 'Tags', 'Tags': '标签',
     'MD编辑器': 'MD Editor', 'MD Editor': 'MD编辑器',
     '刀模设计': 'DieCut Designer', 'DieCut Designer': '刀模设计',
     '装柜大师': 'Loader Master', 'Loader Master': '装柜大师',
@@ -62,7 +61,7 @@
     var spans = document.querySelectorAll('.menus_item a.site-page > span, .menus_item span.site-page.group > span');
     for (var j = 0; j < spans.length; j++) {
       var t = spans[j].textContent.trim();
-      if (MENU_MAP[t]) spans[j].textContent = ' ' + MENU_MAP[t];
+      if (MENU_MAP[t]) spans[j].textContent = MENU_MAP[t];
     }
     var btn = document.getElementById('lang-toggle');
     if (btn) btn.textContent = lang === 'en' ? '中' : 'EN';
@@ -78,11 +77,16 @@
     btn.id = 'lang-toggle';
     btn.type = 'button';
     btn.textContent = getLang() === 'en' ? '中' : 'EN';
+    btn.setAttribute('aria-label', 'Switch language');
     btn.addEventListener('click', toggle);
-    document.body.appendChild(btn);
+    var menus = document.getElementById('menus');
+    var toggleMenu = document.getElementById('toggle-menu');
+    if (menus && toggleMenu && toggleMenu.parentNode === menus) menus.insertBefore(btn, toggleMenu);
+    else if (menus) menus.appendChild(btn);
+    else document.body.appendChild(btn);
     apply();
   }
-  var css = '#lang-toggle{position:fixed;right:18px;bottom:84px;z-index:9999;width:42px;height:42px;border-radius:50%;border:1px solid rgba(15,23,42,.18);background:var(--card-bg,#fff);color:var(--font-color,#222);font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12)}[data-theme=dark] #lang-toggle{border-color:rgba(255,255,255,.22)}#lang-toggle:hover{transform:scale(1.06)}';
+  var css = '#lang-toggle{display:inline-flex;align-items:center;padding:6px 12px;margin-left:6px;background:none;border:none;cursor:pointer;color:var(--font-color,#222);font-size:.92em;font-weight:600;font-family:inherit;line-height:1;transition:color .2s}#lang-toggle:hover{color:#49b1f5}[data-theme=dark] #lang-toggle{color:var(--font-color,#cfd8e3)}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
