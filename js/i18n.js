@@ -11,6 +11,8 @@
       'hero.enter': '进入工具箱',
       'hero.news': '查看动态',
       'products.title': '产品矩阵',
+      'details.title': '工具详解',
+      'about.link': '了解本站与联系方式 →',
       'news.title': '最新动态',
       'news.more': '查看全部 →',
       'card.use': '立即使用 →',
@@ -37,6 +39,8 @@
       'hero.enter': 'Enter Toolbox',
       'hero.news': 'Latest Updates',
       'products.title': 'Products',
+      'details.title': 'Tool details',
+      'about.link': 'About this site & contact →',
       'news.title': 'Latest',
       'news.more': 'View All →',
       'card.use': 'Use Now →',
@@ -65,11 +69,12 @@
     'MD编辑器': 'MD Editor',
     '刀模设计': 'DieCut Designer',
     '装柜大师': 'Loader Master',
-    '在线标签': 'Label Editor'
+    '在线标签': 'Label Editor',
+    '关于': 'About'
   };
 
   var STORE = 'siteLang';
-  var VERSION = '20261028';
+  var VERSION = '20261029';
 
   function getLang() { return localStorage.getItem(STORE) === 'en' ? 'en' : 'zh'; }
   function dict(lang) { return I18N[lang] || I18N.zh; }
@@ -101,10 +106,18 @@
   }
 
   // 内联双语文本（用于文章标题等随数据变化的内容）
+  // 中文原文优先写在 HTML 文本节点里（无 JS 爬虫也能读到），
+  // data-i18n-raw 仅作为显式覆盖；data-i18n-raw-en 为英文版。
   function applyRaw(el, lang) {
-    var raw = el.getAttribute('data-i18n-raw');
-    if (raw == null) return;
     var rawEn = el.getAttribute('data-i18n-raw-en');
+    var raw = el.getAttribute('data-i18n-raw');
+    if (raw == null) {
+      raw = el.getAttribute('data-i18n-raw-orig');
+      if (raw === null) {
+        raw = el.textContent;
+        el.setAttribute('data-i18n-raw-orig', raw);
+      }
+    }
     el.textContent = (lang === 'en' && rawEn) ? rawEn : raw;
   }
 
