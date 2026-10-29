@@ -1,0 +1,37 @@
+# 包装&物流工具箱 — Packaging & Logistics Toolbox
+
+> 免费在线的包装设计与物流测算工具集：纸盒刀模设计、集装箱装柜计算、条码标签设计、Markdown 编辑。四款工具全部在浏览器内运行，无需注册、无需上传任何数据。
+>
+> A free browser-based toolbox for packaging design and logistics planning: carton dieline (die-cut) design, container load planning, barcode label design, and Markdown editing. Every tool runs entirely in the browser — no sign-up, no data upload, no backend.
+
+本站由独立开发者维护，面向包装设计、电商物流与外贸跟单场景。四款工具均为单页应用：源文件与生成结果全部留在本地浏览器，可离线使用，导出格式为行业通用标准（SVG / DXF / PDF / PNG / Excel）。
+
+Maintained by an independent developer, aimed at packaging designers, e-commerce logistics teams and foreign-trade merchandisers. All four tools are single-page applications: source files and generated results stay in the local browser and work offline, exporting to industry-standard formats (SVG / DXF / PDF / PNG / Excel).
+
+## 在线工具 / Online Tools
+
+- [刀模设计 DieCut Designer](https://057300.xyz/diecut/): 参数化生成上千种标准纸盒刀模（carton dieline），实时预览，可导出 SVG / DXF / PDF，对接印刷打样。Parametric generation of 1200+ standard carton dielines with live preview and SVG/DXF/PDF export for print proofing.
+- [装柜大师 Loader Master](https://057300.xyz/loader-master/): 集装箱 3D 装柜仿真与装箱计算，输出 3D 码放方案、装载率与总重统计。3D container load simulation and bin-packing, producing a 3D pallet layout with utilization and total-weight metrics.
+- [标签编辑器 Label Editor](https://057300.xyz/label-editor/): 浏览器内的矢量条码标签设计工具，支持 Code 128 / QR 等条码二维码、多对象编排、模板复用、PDF / PNG 导出与 Excel 批量套打。A vector barcode and QR label designer in the browser: Code 128 / QR support, multi-object layout, template reuse, PDF/PNG export and Excel batch printing.
+- [Markdown 编辑器 Lite MD Editor](https://057300.xyz/lite_MD_editor/): 类 Word 的本地 Markdown 可视化编辑器，完全离线运行，支持 PDF 导出。A local, offline Markdown editor with Word-like visual editing and PDF export.
+
+## 使用说明 / Documentation
+
+- [在线标签编辑器 · 使用说明](https://057300.xyz/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/): 画布与视图、对象添加、条码二维码、多选编排、模板复用、PDF/PNG 导出、Excel 批量套打与移动端操作的完整说明。Full user guide covering canvas and views, adding objects, barcodes and QR codes, multi-select layout, template reuse, PDF/PNG export, Excel batch printing and mobile usage.
+- [在线标签编辑器 Label Editor · 介绍](https://057300.xyz/2026/09/08/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-Label-Editor-%E4%BB%8B%E7%BB%8D/): 标签编辑器的功能边界与技术实现说明。Feature scope and technical implementation notes for Label Editor.
+- [装柜大师 Loader Master · 介绍](https://057300.xyz/2026/08/27/%E8%A3%85%E6%9F%9C%E5%A4%A7%E5%B8%88-Loader-Master-%E9%9B%86%E8%A3%85%E7%AE%B1%E8%A3%85%E6%9F%9C%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/): 集装箱装柜计算工具的装箱算法与使用说明。Packing algorithm and usage guide for the container load-planning tool.
+- [DieCut Designer 刀模设计器介绍](https://057300.xyz/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/): 免费在线刀版工具的发布简介与盒型参数说明。Release notes and box-parameter reference for the free online dieline tool.
+- [Lite MD Editor v1.0.0 发布公告](https://057300.xyz/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/): 轻量 Markdown 编辑器的发布公告。Release announcement for the lightweight Markdown editor.
+
+## 关于 / About
+
+- [关于本站](https://057300.xyz/about/): 站点说明、完整工具清单、技术栈与联系方式。About this site: description, full tool list, tech stack and contact.
+
+## 机器可读端点 / Machine-readable endpoints
+
+- [llms.txt](https://057300.xyz/llms.txt): 本文件，供 AI 爬虫与答案引擎索引。This file, for AI crawlers and answer engines.
+- [ai/summary.json](https://057300.xyz/ai/summary.json): 站点结构化摘要。Structured site summary.
+- [ai/faq.json](https://057300.xyz/ai/faq.json): 常见问题的结构化数据。Structured FAQ data.
+- [ai/service.json](https://057300.xyz/ai/service.json): 工具服务能力描述。Service capability description.
+- [sitemap.xml](https://057300.xyz/sitemap.xml): 站点地图，含全部页面 URL。Sitemap with all page URLs.
+- [atom.xml](https://057300.xyz/atom.xml): RSS / Atom 订阅源。Feed.

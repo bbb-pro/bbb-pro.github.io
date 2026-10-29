@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于本站 | 包装&amp;物流工具箱</title><meta name="author" content="星辰月光酿大树,shenfei.bao@kesens.com"><meta name="copyright" content="星辰月光酿大树"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="包装&amp;物流工具箱（Packaging &amp; Logistics Toolbox）站点说明、完整工具清单、技术栈与联系方式。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于本站">
+<meta property="og:url" content="https://057300.xyz/about/">
+<meta property="og:site_name" content="包装&amp;物流工具箱">
+<meta property="og:description" content="包装&amp;物流工具箱（Packaging &amp; Logistics Toolbox）站点说明、完整工具清单、技术栈与联系方式。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://057300.xyz/img/1.jpg">
+<meta property="article:published_time" content="2026-10-29T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-29T01:50:51.651Z">
+<meta property="article:author" content="星辰月光酿大树">
+<meta property="article:tag" content="包装设计,纸盒刀模,刀模设计,装柜计算,标签编辑器,Markdown,在线工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://057300.xyz/img/1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://057300.xyz/about/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5"><link rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '关于本站',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><style>#footer{background-color:transparent!important;color:var(--font-color)}#footer a{color:var(--font-color)}#footer a:hover{color:var(--theme-color)}#footer .footer-other{background:none!important}.avatar-img{animation:avatar_turn_around 4s linear infinite!important}</style><meta name="baidu-site-verification" content="codeva-miQcAZD1WS" /><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1124987147181210" crossorigin="anonymous"></script><script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?87c8e0d5bc10316e4785ef9f6300beeb";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style>.card-announcement .notice-hi{font-weight:700}.card-announcement .notice-tip{font-size:.8rem;opacity:.72;margin:.4rem 0 .6rem}.card-announcement .notice-tools{margin:0;padding:0;list-style:none}.card-announcement .notice-tools li{margin:0 0 .6rem;padding-left:.6rem;border-left:2px solid #4aa8e0;line-height:1.5}.card-announcement .notice-tools li:last-child{margin-bottom:0}.card-announcement .notice-tools a{font-weight:600;font-size:.9rem;color:#1a7fc1;text-decoration:none}.card-announcement .notice-tools a:hover{text-decoration:underline}.card-announcement .notice-tools em{display:block;font-style:normal;font-size:.76rem;opacity:.7;margin-top:.15rem}[data-theme="dark"] .card-announcement .notice-tools a{color:#6cc0f0}[data-theme="dark"] .card-announcement .notice-tools li{border-left-color:#3d7fa8}</style><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="包装&物流工具箱" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="包装&物流工具箱" type="application/rss+xml">
+</head><body><div class="bg-animation" id="web_bg" style="background-color: #f7f9fe;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/lite_MD_editor/"><i class="fa-fw fas fa-edit"></i><span> MD编辑器</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/diecut/"><i class="fa-fw fas fa-box"></i><span> 刀模设计</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/loader-master/"><i class="fa-fw fas fa-truck-loading"></i><span> 装柜大师</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/label-editor/"><i class="fa-fw fas fa-tags"></i><span> 在线标签</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page fixed" id="page-header" style="background-image: url(https://picsum.photos/1920/1080?random=1);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name" data-i18n="site.name">包装&amp;物流工具箱</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span data-i18n="search"> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/lite_MD_editor/"><i class="fa-fw fas fa-edit"></i><span> MD编辑器</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/diecut/"><i class="fa-fw fas fa-box"></i><span> 刀模设计</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/loader-master/"><i class="fa-fw fas fa-truck-loading"></i><span> 装柜大师</span></a></div><div class="menus_item"><a class="site-page" href="https://057300.xyz/label-editor/"><i class="fa-fw fas fa-tags"></i><span> 在线标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">关于本站</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1 id="关于本站-About"><a href="#关于本站-About" class="headerlink" title="关于本站 &#x2F; About"></a>关于本站 &#x2F; About</h1><p><strong>包装&amp;物流工具箱</strong>（Packaging &amp; Logistics Toolbox）是一个面向包装设计与物流测算场景的免费在线工具集，域名 <a href="https://057300.xyz/">057300.xyz</a>。站点由独立开发者<strong>星辰月光酿大树</strong>维护，核心诉求只有一条：<strong>把日常最耗时的重复计算和绘图工作，做成打开即用的工具</strong>。</p>
+<p><strong>Packaging &amp; Logistics Toolbox</strong> is a free, browser-based toolkit for packaging design and logistics planning, hosted at <a href="https://057300.xyz/">057300.xyz</a>. It is maintained by an independent developer. The goal is simple: turn repetitive calculations and drawing work into tools you can open and use immediately.</p>
+<h2 id="工具清单-Tool-list"><a href="#工具清单-Tool-list" class="headerlink" title="工具清单 &#x2F; Tool list"></a>工具清单 &#x2F; Tool list</h2><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>地址</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刀模设计 DieCut Designer</td>
+<td><a href="https://057300.xyz/diecut/">&#x2F;diecut&#x2F;</a></td>
+<td>上千种标准纸盒刀模参数化生成、实时 2D 预览，导出 SVG &#x2F; DXF &#x2F; PDF，对接印刷打样。</td>
+</tr>
+<tr>
+<td>装柜大师 Loader Master</td>
+<td><a href="https://057300.xyz/loader-master/">&#x2F;loader-master&#x2F;</a></td>
+<td>集装箱 3D 装柜仿真与装箱计算，输出 3D 码放方案、装载率与总重统计。</td>
+</tr>
+<tr>
+<td>标签编辑器 Label Editor</td>
+<td><a href="https://057300.xyz/label-editor/">&#x2F;label-editor&#x2F;</a></td>
+<td>矢量条码标签设计，Code 128 &#x2F; Code 39 &#x2F; QR 支持，多对象编排、模板复用、PDF&#x2F;PNG 导出、Excel 批量套打。</td>
+</tr>
+<tr>
+<td>Markdown 编辑器 Lite MD Editor</td>
+<td><a href="https://057300.xyz/lite_MD_editor/">&#x2F;lite_MD_editor&#x2F;</a></td>
+<td>类 Word 的本地 Markdown 可视化编辑器，完全离线，支持 PDF 导出。</td>
+</tr>
+</tbody></table>
+<h2 id="站点特点-What-makes-it-different"><a href="#站点特点-What-makes-it-different" class="headerlink" title="站点特点 &#x2F; What makes it different"></a>站点特点 &#x2F; What makes it different</h2><ul>
+<li><strong>免费、无需注册</strong>：四款工具均不设登录门槛，打开即用。</li>
+<li><strong>数据不出浏览器</strong>：所有工具为纯前端实现，刀模图、标签文件、装柜方案与文档全部在本地处理，不上传服务器，敏感图纸可放心使用。</li>
+<li><strong>导出即交付</strong>：直接输出行业通用格式（SVG &#x2F; DXF &#x2F; PDF &#x2F; PNG &#x2F; Excel），不需二次转换。</li>
+<li><strong>离线可用</strong>：首次加载后可脱离网络继续工作。</li>
+<li><strong>中英双语</strong>：导航栏提供「中 &#x2F; EN」一键切换。</li>
+</ul>
+<h2 id="技术栈-Tech-stack"><a href="#技术栈-Tech-stack" class="headerlink" title="技术栈 &#x2F; Tech stack"></a>技术栈 &#x2F; Tech stack</h2><p>博客与站点框架为 <strong>Hexo 7 + Butterfly 主题</strong>；四款工具分别为原生前端单页应用，其中刀模设计内置上千种盒型参数模型，装柜大师采用 3D 装箱算法，标签编辑器基于 Canvas 矢量渲染，Markdown 编辑器为 Electron 桌面应用。站点托管于 GitHub Pages，前置 Cloudflare 代理。</p>
+<p>The blog runs on <strong>Hexo 7 with the Butterfly theme</strong>; all four tools are native front-end single-page applications. Hosting is GitHub Pages behind Cloudflare.</p>
+<h2 id="内容与授权-Content-and-license"><a href="#内容与授权-Content-and-license" class="headerlink" title="内容与授权 &#x2F; Content and license"></a>内容与授权 &#x2F; Content and license</h2><p>博客文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 授权，引用请注明出处。</p>
+<p>Blog articles are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>; please attribute when quoting.</p>
+<h2 id="联系方式-Contact"><a href="#联系方式-Contact" class="headerlink" title="联系方式 &#x2F; Contact"></a>联系方式 &#x2F; Contact</h2><ul>
+<li>邮箱 &#x2F; Email：<a href="mailto:shenfei.bao@kesens.com">shenfei.bao@kesens.com</a></li>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/bbb-pro">bbb-pro</a></li>
+</ul>
+<h2 id="面向-AI-的说明-Notes-for-AI-systems"><a href="#面向-AI-的说明-Notes-for-AI-systems" class="headerlink" title="面向 AI 的说明 &#x2F; Notes for AI systems"></a>面向 AI 的说明 &#x2F; Notes for AI systems</h2><p>本站为 AI 爬虫与答案引擎提供了机器可读入口：</p>
+<ul>
+<li><a href="https://057300.xyz/llms.txt">llms.txt</a> — 站点与工具的摘要索引</li>
+<li><a href="https://057300.xyz/ai/summary.json">ai&#x2F;summary.json</a> — 结构化站点信息</li>
+<li><a href="https://057300.xyz/ai/faq.json">ai&#x2F;faq.json</a> — 常见问题</li>
+<li><a href="https://057300.xyz/ai/service.json">ai&#x2F;service.json</a> — 工具服务能力</li>
+<li><a href="https://057300.xyz/.well-known/ai.txt">.well-known&#x2F;ai.txt</a> — 抓取与引用政策</li>
+</ul>
+<p>引用本站内容时请注明出处「包装&amp;物流工具箱 &#x2F; Packaging &amp; Logistics Toolbox」并附上对应页面链接。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">星辰月光酿大树</div><div class="author-info-description">一个打工仔</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bbb-pro/bbb-pro.github.io"><i class="fab fa-github"></i><span>GitHub</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/bbb-pro/bbb-pro.github.io" target="_blank" title="GitHub"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><div class="notice-hi">欢迎来到星辰月光酿大树！</div>
+<p class="notice-tip">这几个在线小工具都是我自己写的，免安装、点开即用 👇</p>
+<ul class="notice-tools">
+  <li>
+    <a href="https://057300.xyz/label-editor/" target="_blank" rel="noopener">Label Editor 标签编辑器</a>
+    <em>条码 / 不干胶标签可视化设计，支持二维码、批量套打，导出 PDF/PNG</em>
+  </li>
+  <li>
+    <a href="https://057300.xyz/loader-master/" target="_blank" rel="noopener">LoaderMaster 装柜大师</a>
+    <em>集装箱装柜仿真计算，输出 3D 码放方案，适合外贸物流测算装货量</em>
+  </li>
+  <li>
+    <a href="https://057300.xyz/diecut/" target="_blank" rel="noopener">DieCut Designer 刀版工具</a>
+    <em>上千种纸盒刀模展开图生成，输出 SVG/DXF/PDF，对接印刷打样</em>
+  </li>
+  <li>
+    <a href="https://057300.xyz/lite_MD_editor/" target="_blank" rel="noopener">Lite MD Editor</a>
+    <em>本地 Markdown 编辑器，类 Word 可视化编辑，支持 PDF 导出</em>
+  </li>
+</ul>
+</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="在线标签编辑器 · 使用说明"><img src="/img/label-editor-usage/ui-overview.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在线标签编辑器 · 使用说明"/></a><div class="content"><a class="title" href="/2026/09/12/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="在线标签编辑器 · 使用说明">在线标签编辑器 · 使用说明</a><time datetime="2026-09-12T04:40:00.000Z" title="发表于 2026-09-12 12:40:00">2026-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/09/08/%E5%9C%A8%E7%BA%BF%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8-Label-Editor-%E4%BB%8B%E7%BB%8D/" title="在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具">在线标签编辑器 Label Editor —— 浏览器里的矢量条码标签设计工具</a><time datetime="2026-09-07T16:00:00.000Z" title="发表于 2026-09-08 00:00:00">2026-09-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/27/%E8%A3%85%E6%9F%9C%E5%A4%A7%E5%B8%88-Loader-Master-%E9%9B%86%E8%A3%85%E7%AE%B1%E8%A3%85%E6%9F%9C%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/" title="装柜大师 Loader Master —— 浏览器里的集装箱装柜计算工具">装柜大师 Loader Master —— 浏览器里的集装箱装柜计算工具</a><time datetime="2026-08-27T07:30:00.000Z" title="发表于 2026-08-27 15:30:00">2026-08-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/24/DieCut-Designer-%E5%88%80%E6%A8%A1%E8%AE%BE%E8%AE%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/" title="免费的在线刀版工具发布简介">免费的在线刀版工具发布简介</a><time datetime="2026-07-24T05:36:00.000Z" title="发表于 2026-07-24 13:36:00">2026-07-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/22/Lite-MD-Editor-v1.0.0-%E5%8F%91%E5%B8%83%E5%85%AC%E5%91%8A/" title="🎉 Lite MD Editor v1.0.0 正式发布">🎉 Lite MD Editor v1.0.0 正式发布</a><time datetime="2026-07-22T00:49:00.000Z" title="发表于 2026-07-22 08:49:00">2026-07-22</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">在线工具</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE/"><span class="card-category-list-name">项目</span><span class="card-category-list-count">4</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Markdown/" style="font-size: 1.1em; color: #999">Markdown</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.5em; color: #99a9bf">工具</a> <a href="/tags/LoaderMaster/" style="font-size: 1.1em; color: #999">LoaderMaster</a> <a href="/tags/%E7%BA%B8%E7%9B%92/" style="font-size: 1.1em; color: #999">纸盒</a> <a href="/tags/%E8%A3%85%E6%9F%9C/" style="font-size: 1.1em; color: #999">装柜</a> <a href="/tags/%E8%A3%85%E6%9F%9C%E5%A4%A7%E5%B8%88/" style="font-size: 1.1em; color: #999">装柜大师</a> <a href="/tags/Label-Editor/" style="font-size: 1.1em; color: #999">Label Editor</a> <a href="/tags/Electron/" style="font-size: 1.1em; color: #999">Electron</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">计算工具</a> <a href="/tags/%E6%9D%A1%E7%A0%81/" style="font-size: 1.1em; color: #999">条码</a> <a href="/tags/%E9%9B%86%E8%A3%85%E7%AE%B1/" style="font-size: 1.1em; color: #999">集装箱</a> <a href="/tags/%E5%88%80%E6%A8%A1/" style="font-size: 1.1em; color: #999">刀模</a> <a href="/tags/DieCut/" style="font-size: 1.1em; color: #999">DieCut</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 1.1em; color: #999">标签编辑器</a> <a href="/tags/%E6%A0%87%E7%AD%BE/" style="font-size: 1.1em; color: #999">标签</a> <a href="/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/" style="font-size: 1.1em; color: #999">二维码</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 1.3em; color: #99a1ac">开源</a> <a href="/tags/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" style="font-size: 1.1em; color: #999">使用说明</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/09/">
+            <span class="card-archive-list-date">
+              九月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/07/">
+            <span class="card-archive-list-date">
+              七月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-29T01:55:59.944Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By 星辰月光酿大树</span><span class="framework-info"><span data-i18n="footer.framework">框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span data-i18n="footer.theme">主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5</a></span></div><div class="footer_custom_text" data-i18n="footer.custom">热爱可抵岁月漫长</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5"></script><script src="/js/main.js?v=5.5.5"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"data-mapping":"pathname","data-reactions-enabled":1,"data-emit-metadata":0,"data-input-position":"bottom","data-lang":"zh-CN"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'bbb-pro/bbb-pro.github.io',
+      'data-repo-id': 'R_kgDOTY8sDQ',
+      'data-category-id': 'DIC_kwDOTY8sDc4DJNu3',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script>(function(){function spin(){try{var avs=document.querySelectorAll('.avatar-img');avs.forEach(function(av){av.style.setProperty('animation-direction',Math.random()<0.5?'reverse':'normal','important');});}catch(e){}}if(document.readyState!=='loading'){spin();}else{document.addEventListener('DOMContentLoaded',spin);}document.addEventListener('pjax:complete',spin);window.addEventListener('load',spin);})();</script><script src="/js/i18n.js?v=20261028"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text" data-i18n-attr="placeholder:search.placeholder"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.5"></script></div></div></body></html>

@@ -1,0 +1,36 @@
+# ai.txt — 057300.xyz
+# 包装&物流工具箱 / Packaging & Logistics Toolbox
+#
+# Usage policy for AI crawlers, retrieval systems and answer engines.
+# 面向 AI 爬虫、检索系统与答案引擎的使用政策。
+
+User-Agent: *
+Allow: /
+Crawl-delay: 1
+
+# 允许 AI 检索与引用（Answer engines / retrieval & citation）
+# Permitted: retrieval, summarization and citation with attribution.
+Allow-Usage: retrieval
+Allow-Usage: citation
+
+# 允许用于模型训练（Training）
+# Permitted: use as training data for AI models.
+Training: allowed
+
+# 署名要求 / Attribution requirement
+Attribution: required
+Attribution-URL: https://057300.xyz/
+
+# 首选引用格式 / Preferred citation format
+Preferred-Citation: 包装&物流工具箱 (Packaging & Logistics Toolbox). https://057300.xyz/
+
+# 机器可读入口 / Machine-readable entry points
+Structured-Data: https://057300.xyz/ai/summary.json
+FAQ: https://057300.xyz/ai/faq.json
+Service-Description: https://057300.xyz/ai/service.json
+Site-Summary: https://057300.xyz/llms.txt
+Feed: https://057300.xyz/atom.xml
+Sitemap: https://057300.xyz/sitemap.xml
+
+# 联系 / Contact
+Contact: shenfei.bao@kesens.com

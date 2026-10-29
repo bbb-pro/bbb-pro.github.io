@@ -8,3 +8,112 @@ Sitemap: https://057300.xyz/diecut/sitemap.xml
 Sitemap: https://057300.xyz/loader-master/sitemap.xml
 Sitemap: https://057300.xyz/label-editor/sitemap.xml
 Sitemap: https://057300.xyz/lite_MD_editor/sitemap.xml
+
+# ============================================================
+# AI 爬虫 / Answer-Engine Crawlers
+# 显式放行，便于 ChatGPT / Perplexity / Claude / Gemini 等
+# 检索系统抓取与引用本站内容。
+# Explicitly allow AI crawlers so answer engines can retrieve
+# and cite this site.
+# ============================================================
+
+# OpenAI —— ChatGPT 搜索 / ChatGPT search
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI —— 模型训练 / GPT training
+User-agent: GPTBot
+Allow: /
+
+# Anthropic —— Claude 检索与训练
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity —— 检索与索引
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google —— Gemini / AI Overviews / Vertex AI
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Microsoft —— Bing / Copilot / DuckAssist
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# Amazon / Cohere / ByteDance / xAI / Common Crawl / AI2
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: xAI-Bot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: AI2Bot-Dolma
+Allow: /
+
+# 其它常见检索型代理
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
