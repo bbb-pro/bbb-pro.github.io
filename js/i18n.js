@@ -74,7 +74,7 @@
   };
 
   var STORE = 'siteLang';
-  var VERSION = '20261029';
+  var VERSION = '20261029b';
 
   function getLang() { return localStorage.getItem(STORE) === 'en' ? 'en' : 'zh'; }
   function dict(lang) { return I18N[lang] || I18N.zh; }
@@ -201,11 +201,11 @@
   /* ---- 主流程 ---- */
   function apply() {
     var lang = getLang();
-    var nodes = document.querySelectorAll('[data-i18n],[data-i18n-raw],[data-i18n-attr]');
+    var nodes = document.querySelectorAll('[data-i18n],[data-i18n-raw],[data-i18n-raw-en],[data-i18n-attr]');
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       if (el.hasAttribute('data-i18n')) applyText(el, lang);
-      if (el.hasAttribute('data-i18n-raw')) applyRaw(el, lang);
+      if (el.hasAttribute('data-i18n-raw') || el.hasAttribute('data-i18n-raw-en')) applyRaw(el, lang);
       if (el.hasAttribute('data-i18n-attr')) applyAttr(el, lang);
     }
     applyMenu(lang);
