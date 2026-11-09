@@ -26,6 +26,7 @@ Maintained by an independent developer, aimed at packaging designers, e-commerce
 ## 关于 / About
 
 - [关于本站](https://057300.xyz/about/): 站点说明、完整工具清单、技术栈与联系方式。About this site: description, full tool list, tech stack and contact.
+- [About this site (English)](https://057300.xyz/about/en/): Full English version of the About page — the four tools with feature detail, tech stack, license and contact, written for English-language readers and answer engines.
 
 ## 机器可读端点 / Machine-readable endpoints
 
