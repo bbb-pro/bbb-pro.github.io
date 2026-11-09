@@ -74,7 +74,7 @@
   };
 
   var STORE = 'siteLang';
-  var VERSION = '20261109';
+  var VERSION = '20261109b';
 
   function getLang() { return localStorage.getItem(STORE) === 'en' ? 'en' : 'zh'; }
   function dict(lang) { return I18N[lang] || I18N.zh; }
@@ -191,11 +191,32 @@
     return btn;
   }
 
+  // 页面级语言链接：存在独立语言版本页面时（如 /about/ ↔ /about/en/），
+  // 按钮应跳转到对应语言页面，而不是在原地只翻译导航栏。
+  function langLink() {
+    var bw = document.getElementById('body-wrap');
+    return bw ? bw.getAttribute('data-lang-link') : null;
+  }
+  function langTarget() {
+    var bw = document.getElementById('body-wrap');
+    return bw ? bw.getAttribute('data-lang-target') : null;
+  }
+
   function updateToggle(lang) {
     var btn = ensureToggle();
-    btn.textContent = lang === 'en' ? '中' : 'EN';
-    btn.setAttribute('aria-label', lang === 'en' ? 'Switch to Chinese' : 'Switch to English');
-    btn.setAttribute('title', lang === 'en' ? '切换到中文' : 'Switch to English');
+    btn.style.display = '';
+    var link = langLink();
+    var target = langTarget();
+    if (link) {
+      // 跳转模式：按钮文案表示「目标语言」
+      btn.textContent = target === 'en' ? 'EN' : '中';
+      btn.setAttribute('aria-label', target === 'en' ? 'Switch to the English version' : '切换到中文版');
+      btn.setAttribute('title', target === 'en' ? 'English version' : '中文版');
+    } else {
+      btn.textContent = lang === 'en' ? '中' : 'EN';
+      btn.setAttribute('aria-label', lang === 'en' ? 'Switch to Chinese' : 'Switch to English');
+      btn.setAttribute('title', lang === 'en' ? '切换到中文' : 'Switch to English');
+    }
   }
 
   /* ---- 主流程 ---- */
@@ -217,13 +238,17 @@
     watchTitle();
     document.documentElement.setAttribute('data-lang', lang);
     document.documentElement.setAttribute('lang', staticLang || (lang === 'en' ? 'en' : 'zh-CN'));
-    if (staticLang) {
+    if (staticLang && !langLink()) {
+      // 静态语言页且没有对应语言的独立页面：按钮无处可跳，隐藏
       var sb = document.getElementById('lang-toggle');
       if (sb) sb.style.display = 'none';
     }
   }
 
   function toggle() {
+    // 有独立语言版本页面时 → 跳转；否则在原地做 JS 语言切换
+    var link = langLink();
+    if (link) { window.location.href = link; return; }
     localStorage.setItem(STORE, getLang() === 'en' ? 'zh' : 'en');
     apply();
   }
