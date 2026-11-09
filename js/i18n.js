@@ -74,7 +74,7 @@
   };
 
   var STORE = 'siteLang';
-  var VERSION = '20261029b';
+  var VERSION = '20261109';
 
   function getLang() { return localStorage.getItem(STORE) === 'en' ? 'en' : 'zh'; }
   function dict(lang) { return I18N[lang] || I18N.zh; }
@@ -200,7 +200,10 @@
 
   /* ---- 主流程 ---- */
   function apply() {
-    var lang = getLang();
+    // 静态语言页面（如英文版 About，html[data-static-lang]）不跟随 localStorage 偏好，
+    // 页面整体固定为自身语言；语言切换入口由页面底部的对应语言链接提供。
+    var staticLang = document.documentElement.getAttribute('data-static-lang');
+    var lang = staticLang || getLang();
     var nodes = document.querySelectorAll('[data-i18n],[data-i18n-raw],[data-i18n-raw-en],[data-i18n-attr]');
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
@@ -213,7 +216,11 @@
     updateToggle(lang);
     watchTitle();
     document.documentElement.setAttribute('data-lang', lang);
-    document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
+    document.documentElement.setAttribute('lang', staticLang || (lang === 'en' ? 'en' : 'zh-CN'));
+    if (staticLang) {
+      var sb = document.getElementById('lang-toggle');
+      if (sb) sb.style.display = 'none';
+    }
   }
 
   function toggle() {
