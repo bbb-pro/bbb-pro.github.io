@@ -74,7 +74,7 @@
   };
 
   var STORE = 'siteLang';
-  var VERSION = '20261109b';
+  var VERSION = '20261110';
 
   function getLang() { return localStorage.getItem(STORE) === 'en' ? 'en' : 'zh'; }
   function dict(lang) { return I18N[lang] || I18N.zh; }
@@ -149,6 +149,21 @@
       }
       var label = (lang === 'en' && MENU_EN[base]) ? MENU_EN[base] : base;
       el.textContent = ' ' + label;
+    }
+  }
+
+  // 链接按语言切换：英文态用 data-href-en，中文态恢复原始 href（幂等）
+  function applyHref(lang) {
+    var links = document.querySelectorAll('[data-href-en]');
+    for (var i = 0; i < links.length; i++) {
+      var el = links[i];
+      var orig = el.getAttribute('data-href-orig');
+      if (orig === null) {
+        orig = el.getAttribute('href') || '';
+        el.setAttribute('data-href-orig', orig);
+      }
+      var en = el.getAttribute('data-href-en');
+      el.setAttribute('href', (lang === 'en' && en) ? en : orig);
     }
   }
 
@@ -233,6 +248,7 @@
       if (el.hasAttribute('data-i18n-attr')) applyAttr(el, lang);
     }
     applyMenu(lang);
+    applyHref(lang);
     localizeTitle(lang);
     updateToggle(lang);
     watchTitle();
